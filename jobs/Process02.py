@@ -9,13 +9,13 @@ from openai.error import RateLimitError
 from langchain.schema import HumanMessage
 from langchain.chat_models import AzureChatOpenAI
 
-LOGGING_CONFIG = 'DatasetProcess/logging.ini'
+LOGGING_CONFIG = 'logs/logging.ini'
 logging.config.fileConfig(LOGGING_CONFIG)
 logger = logging.getLogger(__name__)
 
 def load_config():
     config = configparser.ConfigParser()
-    config.read('DatasetProcess/const.ini')
+    config.read('config.ini')
     return config['OpenAI']
 
 config = load_config()
